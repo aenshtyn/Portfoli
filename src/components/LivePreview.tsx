@@ -65,7 +65,7 @@ export default function LivePreview({ url, title, githubUrl }: LivePreviewProps)
               <p className="text-sm">Preview unavailable</p>
             </div>
           </div>
-        ) : (
+        ) : previewUrl ? (
           <img
             src={previewUrl}
             alt={`Live preview of ${title}`}
@@ -73,7 +73,7 @@ export default function LivePreview({ url, title, githubUrl }: LivePreviewProps)
             onLoad={handleImageLoad}
             onError={handleImageError}
           />
-        )}
+        ) : null}
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
