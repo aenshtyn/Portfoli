@@ -165,6 +165,19 @@ export const projectsData: ProjectData[] = [
     image: 'kalima.jpg',
     status: 'ongoing',
   },
+  {
+    id: nanoid(),
+    title: 'Latitude Enterprises',
+    description: 'Professional business website showcasing services and company portfolio with modern design and user-friendly navigation.',
+    longDescription: 'A comprehensive corporate website built with WordPress, featuring responsive design, content management system, contact forms, and service showcase. Optimized for search engines and mobile devices with professional styling.',
+    technologies: ['WordPress', 'PHP', 'MySQL', 'CSS3', 'JavaScript', 'Responsive Design'],
+    liveUrl: 'https://latitudeenterprises.com',
+    featured: true,
+    category: 'website',
+    year: 2024,
+    image: 'latitude.jpg',
+    status: 'completed',
+  },
   // Mobile Apps Section
   {
     id: nanoid(),
