@@ -14,6 +14,14 @@ export interface ProjectData {
   year: number;
   image: string;
   status: 'completed' | 'ongoing' | 'planned';
+  // Mobile app specific fields
+  playStoreUrl?: string;
+  appStoreUrl?: string;
+  screenshots?: string[];
+  appIcon?: string;
+  platform?: 'ios' | 'android' | 'cross-platform';
+  downloadCount?: string;
+  rating?: number;
 }
 
 export interface HeroData {
@@ -156,6 +164,48 @@ export const projectsData: ProjectData[] = [
     year: 2024,
     image: 'kalima.jpg',
     status: 'ongoing',
+  },
+  // Mobile Apps Section
+  {
+    id: nanoid(),
+    title: 'FarmSync Mobile',
+    description: 'Native mobile app for farmers to manage crops, track market prices, and connect with buyers on the go.',
+    longDescription: 'Cross-platform mobile application built with React Native, featuring offline capabilities, push notifications for price alerts, and real-time chat with buyers. Includes GPS tracking for farm locations and weather integration.',
+    technologies: ['React Native', 'Expo', 'TypeScript', 'Redux', 'Firebase', 'Maps API'],
+    liveUrl: 'https://farmsync.co.ke/mobile',
+    githubUrl: 'https://github.com/aenshtyn/farmsync-mobile',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.farmsync.mobile',
+    appStoreUrl: 'https://apps.apple.com/app/farmsync/id123456789',
+    featured: true,
+    category: 'mobile-app',
+    platform: 'cross-platform',
+    year: 2025,
+    image: 'farmsync-mobile.jpg',
+    appIcon: 'farmsync-icon.png',
+    screenshots: ['farmsync-screen1.jpg', 'farmsync-screen2.jpg', 'farmsync-screen3.jpg'],
+    status: 'ongoing',
+    downloadCount: '1K+',
+    rating: 4.5,
+  },
+  {
+    id: nanoid(),
+    title: 'Feed Calculator Pro',
+    description: 'Professional mobile app for livestock nutritionists to calculate optimal feed formulations offline.',
+    longDescription: 'Advanced mobile application for animal nutrition professionals. Features complex mathematical calculations, ingredient database, cost optimization, and report generation. Works completely offline with cloud sync capabilities.',
+    technologies: ['Flutter', 'Dart', 'SQLite', 'PDF Generation', 'Charts'],
+    liveUrl: 'https://feedformula.com/mobile',
+    githubUrl: 'https://github.com/aenshtyn/feed-calculator-mobile',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.feedcalculator.pro',
+    featured: true,
+    category: 'mobile-app',
+    platform: 'android',
+    year: 2024,
+    image: 'feed-calculator-mobile.jpg',
+    appIcon: 'feed-calculator-icon.png',
+    screenshots: ['feed-calc-screen1.jpg', 'feed-calc-screen2.jpg', 'feed-calc-screen3.jpg'],
+    status: 'completed',
+    downloadCount: '500+',
+    rating: 4.8,
   },
 ];
 
