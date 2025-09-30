@@ -1,0 +1,22 @@
+<svg width="960" height="600" viewBox="0 0 960 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="600" rx="32" fill="url(#gradient)"/>
+  <g opacity="0.55">
+    <path d="M160 180H840" stroke="rgba(226, 232, 240, 0.35)" stroke-width="2" stroke-dasharray="14 12"/>
+    <path d="M160 300H840" stroke="rgba(226, 232, 240, 0.25)" stroke-width="2" stroke-dasharray="12 12"/>
+    <path d="M160 420H840" stroke="rgba(226, 232, 240, 0.35)" stroke-width="2" stroke-dasharray="10 14"/>
+  </g>
+  <g opacity="0.6">
+    <rect x="220" y="160" width="220" height="260" rx="24" fill="rgba(56, 189, 248, 0.35)"/>
+    <rect x="470" y="200" width="270" height="200" rx="32" fill="rgba(14, 165, 233, 0.32)"/>
+    <rect x="320" y="320" width="440" height="110" rx="28" fill="rgba(125, 211, 252, 0.35)"/>
+  </g>
+  <text x="120" y="120" fill="#F8FAFC" font-size="52" font-weight="700">Latitude Enterprises</text>
+  <text x="120" y="166" fill="#E2E8F0" font-size="20" opacity="0.85">Procurement · Logistics · Engineering</text>
+  <defs>
+    <linearGradient id="gradient" x1="200" y1="40" x2="760" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="0.5" stop-color="#0B1120"/>
+      <stop offset="1" stop-color="#010617"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,22 @@
+<svg width="960" height="600" viewBox="0 0 960 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="600" rx="32" fill="url(#gradient)"/>
+  <g opacity="0.55">
+    <path d="M160 180H840" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-dasharray="14 12"/>
+    <path d="M160 300H840" stroke="rgba(255,255,255,0.15)" stroke-width="2" stroke-dasharray="10 10"/>
+    <path d="M160 420H840" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-dasharray="6 12"/>
+  </g>
+  <g opacity="0.7">
+    <rect x="220" y="160" width="220" height="280" rx="24" fill="rgba(244,114,182,0.65)"/>
+    <rect x="460" y="120" width="280" height="200" rx="24" fill="rgba(99,102,241,0.5)"/>
+    <rect x="520" y="340" width="220" height="140" rx="24" fill="rgba(56,189,248,0.45)"/>
+  </g>
+  <text x="120" y="120" fill="#FDF4FF" font-size="52" font-weight="700">Regal Studios</text>
+  <text x="120" y="166" fill="#FCE7F3" font-size="20" opacity="0.85">Interactive storytelling for a creative collective</text>
+  <defs>
+    <linearGradient id="gradient" x1="180" y1="40" x2="780" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#312E81"/>
+      <stop offset="0.4" stop-color="#4C1D95"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,25 +1,24 @@
-import { nanoid } from 'nanoid';
+export type ProjectCategory = "website" | "web-app" | "mobile-app";
+export type ProjectStatus = "in-production" | "ongoing" | "shipped";
 
-// Enhanced types for better type safety
 export interface ProjectData {
   id: string;
+  slug: string;
   title: string;
   description: string;
-  longDescription?: string;
+  summary: string;
   technologies: string[];
-  liveUrl: string;
+  liveUrl?: string;
   githubUrl?: string;
-  featured: boolean;
-  category: 'web-app' | 'mobile-app' | 'website' | 'api' | 'other';
   year: number;
-  image: string;
-  status: 'completed' | 'ongoing' | 'planned';
-  // Mobile app specific fields
+  category: ProjectCategory;
+  status: ProjectStatus;
+  image?: string;
+  themeColor: string;
   playStoreUrl?: string;
   appStoreUrl?: string;
-  screenshots?: string[];
   appIcon?: string;
-  platform?: 'ios' | 'android' | 'cross-platform';
+  platform?: "ios" | "android" | "cross-platform";
   downloadCount?: string;
   rating?: number;
 }
@@ -28,231 +27,302 @@ export interface HeroData {
   title: string;
   name: string;
   subtitle: string;
-  cta?: string;
+  description: string;
+  ctaPrimary: string;
+  ctaSecondary: string;
 }
 
 export interface AboutData {
-  img: string;
-  paragraphOne: string;
-  paragraphTwo: string;
-  paragraphThree: string;
-  resume?: string;
+  bio: string[];
+  stats: { label: string; value: string }[];
   skills: string[];
+  resumeUrl: string;
+  image: string;
+}
+
+export interface ExperienceItem {
+  id: string;
+  company: string;
+  role: string;
+  period: string;
+  accomplishments: string[];
+}
+
+export interface ServiceItem {
+  id: string;
+  title: string;
+  description: string;
+  outcomes: string[];
 }
 
 export interface ContactData {
-  cta: string;
-  btn: string;
+  headline: string;
+  subheadline: string;
   email: string;
   tel: string;
+  location: string;
 }
 
 export interface SocialNetwork {
   id: string;
-  name: string;
+  label: string;
   url: string;
-  icon: string;
+  icon: "github" | "linkedin" | "twitter";
 }
 
-// HEAD DATA
 export const headData = {
-  title: 'Mohamed | Full Stack Developer',
-  lang: 'en',
-  description: 'Welcome to my Portfolio - Full Stack Developer specializing in modern web technologies',
+  title: "Mohamed Abdullahi | Full Stack Software Engineer",
+  lang: "en",
+  description:
+    "Full Stack Engineer crafting resilient web and mobile platforms for agritech, fintech, and government partners.",
 };
 
-// HERO DATA
+export const navLinks = [
+  { id: "hero", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "websites", label: "Websites" },
+  { id: "webapps", label: "Web Apps" },
+  { id: "mobile", label: "Mobile" },
+  { id: "contact", label: "Contact" },
+] as const;
+
 export const heroData: HeroData = {
-  title: 'Hello! My name is',
-  name: 'Mohamed',
-  subtitle: 'A Full Stack Software Developer',
-  cta: 'Know more',
+  title: "Full Stack Engineer",
+  name: "Mohamed Abdullahi",
+  subtitle: "Designing resilient platforms for emerging markets",
+  description:
+    "I help product teams ship dependable web and mobile experiences – from real-time agritech platforms to enterprise dashboards and public-sector portals.",
+  ctaPrimary: "Explore work",
+  ctaSecondary: "Download résumé",
 };
 
-// ABOUT DATA
 export const aboutData: AboutData = {
-  img: 'profile.jpg',
-  paragraphOne: 'With 4+ years of experience building, maintaining and testing applications of different scales, I specialize in full-stack development with modern technologies.',
-  paragraphTwo: 'I am proficient in Python/Django, JavaScript/TypeScript with React, Vue, Angular, and Elixir. I love creating efficient, scalable solutions.',
-  paragraphThree: 'I am passionate about clean code, user experience, and continuous learning. Ready to tackle projects of any complexity.',
-  resume: 'https://drive.google.com/file/d/1BCb9VUMWTrm-YtKMBxAg7jmoJkWgNhmf/view?usp=sharing',
-  skills: ['React', 'Next.js', 'TypeScript', 'Python', 'Django', 'Vue.js', 'Angular', 'Elixir', 'Node.js', 'PostgreSQL', 'MongoDB', 'AWS', 'Docker'],
+  bio: [
+    "I build platforms that connect people to critical services — from agricultural marketplaces to legal intelligence dashboards.",
+    "My focus is on performance, developer experience, and long-term maintainability. I lead teams through architecture decisions, guide refactors, and ship incrementally without sacrificing quality.",
+  ],
+  stats: [
+    { label: "Years of experience", value: "6+" },
+    { label: "Projects delivered", value: "35" },
+    { label: "Markets served", value: "4" },
+  ],
+  skills: [
+    "TypeScript",
+    "Next.js",
+    "React Native",
+    "Django",
+    "Vue",
+    "Angular",
+    "PostgreSQL",
+    "Tailwind CSS",
+    "Azure",
+    "Docker",
+    "CI/CD",
+    "System design",
+  ],
+  resumeUrl: "https://drive.google.com/file/d/1BCb9VUMWTrm-YtKMBxAg7jmoJkWgNhmf/view?usp=sharing",
+  image: "/profile.jpg",
 };
 
-// PROJECTS DATA
+export const experiences: ExperienceItem[] = [
+  {
+    id: "latitude-enterprises",
+    company: "Latitude Enterprises",
+    role: "Lead Full Stack Engineer",
+    period: "2022 — Present",
+    accomplishments: [
+      "Architected a composable design system that cut build times by 40%",
+      "Delivered analytics dashboards processing 500K+ monthly events",
+      "Led migration to Kubernetes and Azure-managed services",
+    ],
+  },
+  {
+    id: "agritech-coalition",
+    company: "Kenya Agritech Coalition",
+    role: "Senior Software Engineer",
+    period: "2020 — 2022",
+    accomplishments: [
+      "Shipped FarmSync platform with offline-first mobile companion",
+      "Built pricing intelligence tooling adopted by 12 co-ops",
+      "Introduced CI/CD workflows that reduced release friction by 60%",
+    ],
+  },
+];
+
+export const services: ServiceItem[] = [
+  {
+    id: "product-engineering",
+    title: "Product Engineering",
+    description: "End-to-end delivery of responsive web experiences with measurable KPIs.",
+    outcomes: ["Design system integration", "Web vitals optimisation", "Automated QA"],
+  },
+  {
+    id: "platform-architecture",
+    title: "Platform Architecture",
+    description: "Evolving systems through modular architecture, observability, and DevOps best practices.",
+    outcomes: ["Cloud-native blueprints", "CI/CD pipelines", "Scalability roadmaps"],
+  },
+  {
+    id: "mobile-delivery",
+    title: "Mobile Delivery",
+    description: "Shipping cross-platform mobile apps with offline-first journeys and native polish.",
+    outcomes: ["Store deployment", "Analytics instrumentation", "Growth experiments"],
+  },
+];
+
 export const projectsData: ProjectData[] = [
   {
-    id: nanoid(),
-    title: 'FarmSync',
-    description: 'A comprehensive agricultural platform connecting farmers with buyers, featuring real-time market data, inventory management, and logistics coordination.',
-    longDescription: 'FarmSync is a modern web application that revolutionizes agricultural commerce by providing farmers with direct access to buyers, real-time market pricing, inventory tracking, and streamlined logistics. Built with cutting-edge web technologies for optimal performance and user experience.',
-    technologies: ['React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Tailwind CSS', 'Framer Motion'],
-    liveUrl: 'https://farmsync.co.ke',
-    githubUrl: 'https://github.com/aenshtyn/farmsync-website',
-    featured: true,
-    category: 'web-app',
+    id: "latitude-enterprises",
+    slug: "latitude-enterprises",
+    title: "Latitude Enterprises",
+    description:
+      "Corporate presence for Latitude's procurement, logistics, and engineering practice with sector-specific case studies and tender funnels.",
+    summary:
+      "Crafted a WordPress build with reusable content blocks, multilingual-ready architecture, and conversion-focused calls to action tuned for regional SEO.",
+    technologies: ["WordPress", "PHP", "MySQL", "Elementor", "Cloudflare"],
+    liveUrl: "https://latitudeenterprises.com",
+    year: 2024,
+    category: "website",
+    status: "shipped",
+    image: "/projects/latitude-enterprises.svg",
+    themeColor: "#38bdf8",
+  },
+  {
+    id: "farmsync",
+    slug: "farmsync",
+    title: "FarmSync",
+    description:
+      "Marketing hub for FarmSync's digital marketplace featuring live price signals, produce category highlights, and cooperative success stories.",
+    summary:
+      "Delivered a blazing-fast Next.js site with geotargeted messaging, newsroom publishing workflow, and CRM-integrated lead capture tied to agritech metrics.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel"],
+    liveUrl: "https://farmsync.co.ke",
+    githubUrl: "https://github.com/aenshtyn/farmsync-website",
     year: 2025,
-    image: 'farmsync.jpg',
-    status: 'completed',
+    category: "website",
+    status: "shipped",
+    image: "/projects/farmsync.svg",
+    themeColor: "#22d3ee",
   },
   {
-    id: nanoid(),
-    title: 'Tito & Associates Law Firm',
-    description: 'A comprehensive web application built on Angular and Django providing client information and analytics dashboard for law firm management.',
-    longDescription: 'Full-stack application with client portal, case management, document handling, and advanced analytics dashboard for law firm operations.',
-    technologies: ['Angular', 'Django', 'TypeScript', 'Python', 'PostgreSQL', 'REST API'],
-    liveUrl: 'https://titolaw.netlify.app/',
-    githubUrl: 'https://github.com/aenshtyn/Tito',
-    featured: true,
-    category: 'web-app',
+    id: "regal-studios",
+    slug: "regal-studios",
+    title: "Regal Studios",
+    description:
+      "Immersive portfolio for Regal Studios' film and photography collective, blending editorial storytelling with high-impact visuals.",
+    summary:
+      "Implemented a single-page React experience with parallax sequences, modular galleries, and enquiry CTAs aligned to the studio's brand voice.",
+    technologies: ["React", "GSAP", "CSS Modules", "Vercel"],
+    liveUrl: "https://aenshtyn.github.io/regalstudios/",
+    githubUrl: "https://github.com/aenshtyn/regalstudios",
     year: 2024,
-    image: 'tito.jpg',
-    status: 'ongoing',
+    category: "website",
+    status: "shipped",
+    image: "/projects/regal-studios.svg",
+    themeColor: "#f472b6",
   },
   {
-    id: nanoid(),
-    title: 'Regal Studios',
-    description: 'An interactive single page website showcasing the creative works of the Regal group with modern animations and responsive design.',
-    longDescription: 'A comprehensive portfolio website built with modern web technologies, featuring smooth animations, interactive galleries, and optimized performance.',
-    technologies: ['React', 'JavaScript', 'CSS3', 'HTML5', 'GSAP'],
-    liveUrl: 'https://aenshtyn.github.io/regalstudios/',
-    githubUrl: 'https://github.com/aenshtyn/regalstudios',
-    featured: true,
-    category: 'website',
+    id: "feed-formulator",
+    slug: "feed-formulator",
+    title: "Feed Formulator",
+    description:
+      "Web application that helps livestock nutritionists balance formulas, compare ingredients, and export full ration reports in minutes.",
+    summary:
+      "Built a responsive React interface with real-time optimisation, charting dashboards, and Django-powered APIs for solver accuracy and data governance.",
+    technologies: ["React", "TypeScript", "Django", "Chart.js", "Railway"],
+    liveUrl: "https://feedformula.netlify.app/",
+    githubUrl: "https://github.com/aenshtyn/feedformula",
     year: 2024,
-    image: 'regal.jpg',
-    status: 'completed',
+    category: "web-app",
+    status: "shipped",
+    themeColor: "#6366f1",
   },
   {
-    id: nanoid(),
-    title: 'Feed Formula Calculator API',
-    description: 'A RESTful API for animal feed formulation calculations, optimizing nutritional content and cost-effectiveness for livestock feeding.',
-    longDescription: 'A sophisticated backend API that handles complex mathematical calculations for animal feed formulation. Provides endpoints for ingredient analysis, nutritional optimization, and cost calculation for efficient livestock feeding programs.',
-    technologies: ['Python', 'Django', 'REST API', 'PostgreSQL', 'NumPy', 'SciPy'],
-    liveUrl: 'https://formulatorapi-production.up.railway.app/',
-    githubUrl: 'https://github.com/aenshtyn/FormulatorAPI',
-    featured: true,
-    category: 'api',
+    id: "dairy-management",
+    slug: "dairy-management",
+    title: "Dairy Management System",
+    description:
+      "Operations cockpit for dairy farms covering herd health, production tracking, feed planning, and KPI dashboards.",
+    summary:
+      "Delivered a Vue + Django stack with granular roles, offline-ready data capture, and analytics that surface actionable farm insights across cooperatives.",
+    technologies: ["Vue", "Django", "PostgreSQL", "Chart.js", "Bootstrap"],
+    liveUrl: "https://dairymanagement.netlify.app/",
+    githubUrl: "https://github.com/aenshtyn/dairy-management",
     year: 2024,
-    image: 'formulator.jpg',
-    status: 'completed',
+    category: "web-app",
+    status: "shipped",
+    themeColor: "#0ea5e9",
   },
   {
-    id: nanoid(),
-    title: 'Feed Formula',
-    description: 'A web application for livestock feed formulation with advanced calculations and nutritional optimization features.',
-    longDescription: 'Complete web application for animal nutritionists and farmers to create optimized feed formulas. Features ingredient management, nutritional analysis, cost optimization, and formula comparison tools.',
-    technologies: ['React', 'JavaScript', 'Bootstrap', 'Chart.js', 'REST API'],
-    liveUrl: 'https://feedformula.netlify.app/',
-    githubUrl: 'https://github.com/aenshtyn/feedformula',
-    featured: true,
-    category: 'web-app',
-    year: 2024,
-    image: 'feedformula.jpg',
-    status: 'completed',
-  },
-  {
-    id: nanoid(),
-    title: 'Kalima Agricultural Platform',
-    description: 'An ongoing cooperative platform for Kajiado farmers to help with marketing and selling their produce with real-time market data.',
-    longDescription: 'Agricultural technology platform connecting farmers directly with buyers, featuring market analytics, inventory management, and logistics coordination.',
-    technologies: ['Vue.js', 'Node.js', 'Express', 'MongoDB', 'Socket.io', 'Chart.js'],
-    liveUrl: 'https://aenshtyn.github.io/Kalima2/',
-    githubUrl: 'https://github.com/aenshtyn/Kalima2',
-    featured: true,
-    category: 'web-app',
-    year: 2024,
-    image: 'kalima.jpg',
-    status: 'ongoing',
-  },
-  {
-    id: nanoid(),
-    title: 'Latitude Enterprises',
-    description: 'Professional business website showcasing services and company portfolio with modern design and user-friendly navigation.',
-    longDescription: 'A comprehensive corporate website built with WordPress, featuring responsive design, content management system, contact forms, and service showcase. Optimized for search engines and mobile devices with professional styling.',
-    technologies: ['WordPress', 'PHP', 'MySQL', 'CSS3', 'JavaScript', 'Responsive Design'],
-    liveUrl: 'https://latitudeenterprises.com',
-    featured: true,
-    category: 'website',
-    year: 2024,
-    image: 'latitude.jpg',
-    status: 'completed',
-  },
-  // Mobile Apps Section
-  {
-    id: nanoid(),
-    title: 'FarmSync Mobile',
-    description: 'Native mobile app for farmers to manage crops, track market prices, and connect with buyers on the go.',
-    longDescription: 'Cross-platform mobile application built with React Native, featuring offline capabilities, push notifications for price alerts, and real-time chat with buyers. Includes GPS tracking for farm locations and weather integration.',
-    technologies: ['React Native', 'Expo', 'TypeScript', 'Redux', 'Firebase', 'Maps API'],
-    liveUrl: 'https://farmsync.co.ke/mobile',
-    githubUrl: 'https://github.com/aenshtyn/farmsync-mobile',
-    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.farmsync.mobile',
-    appStoreUrl: 'https://apps.apple.com/app/farmsync/id123456789',
-    featured: true,
-    category: 'mobile-app',
-    platform: 'cross-platform',
+    id: "farmsync-mobile",
+    slug: "farmsync-mobile",
+    title: "FarmSync Mobile",
+    description:
+      "Cross-platform companion app that keeps farmers synced with price alerts, task lists, and buyer conversations on the go.",
+    summary:
+      "Led delivery of a React Native application with offline storage, push notifications, and geo-tagged activity feeds wired into the FarmSync backend.",
+    technologies: ["React Native", "Expo", "TypeScript", "Redux", "Firebase"],
+    liveUrl: "https://farmsync.co.ke/mobile",
+    githubUrl: "https://github.com/aenshtyn/farmsync-mobile",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.farmsync.mobile",
+    appStoreUrl: "https://apps.apple.com/app/farmsync/id123456789",
     year: 2025,
-    image: 'farmsync-mobile.jpg',
-    appIcon: 'farmsync-icon.png',
-    screenshots: ['farmsync-screen1.jpg', 'farmsync-screen2.jpg', 'farmsync-screen3.jpg'],
-    status: 'ongoing',
-    downloadCount: '1K+',
+    category: "mobile-app",
+    status: "ongoing",
+    appIcon: "/projects/farmsync-mobile-icon.svg",
+    platform: "cross-platform",
+    downloadCount: "1K+",
     rating: 4.5,
+    themeColor: "#22d3ee",
   },
   {
-    id: nanoid(),
-    title: 'Feed Calculator Pro',
-    description: 'Professional mobile app for livestock nutritionists to calculate optimal feed formulations offline.',
-    longDescription: 'Advanced mobile application for animal nutrition professionals. Features complex mathematical calculations, ingredient database, cost optimization, and report generation. Works completely offline with cloud sync capabilities.',
-    technologies: ['Flutter', 'Dart', 'SQLite', 'PDF Generation', 'Charts'],
-    liveUrl: 'https://feedformula.com/mobile',
-    githubUrl: 'https://github.com/aenshtyn/feed-calculator-mobile',
-    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.feedcalculator.pro',
-    featured: true,
-    category: 'mobile-app',
-    platform: 'android',
+    id: "feed-calculator-pro",
+    slug: "feed-calculator-pro",
+    title: "Feed Calculator Pro",
+    description:
+      "Android toolkit that calculates balanced rations, generates PDF reports, and syncs ingredient libraries for nutrition consultants.",
+    summary:
+      "Built a Flutter experience featuring offline persistence, exportable nutrition reports, and analytics instrumentation for growth experiments.",
+    technologies: ["Flutter", "Dart", "SQLite", "Firebase", "Analytics"],
+    liveUrl: "https://feedformula.com/mobile",
+    githubUrl: "https://github.com/aenshtyn/feed-calculator-mobile",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.feedcalculator.pro",
     year: 2024,
-    image: 'feed-calculator-mobile.jpg',
-    appIcon: 'feed-calculator-icon.png',
-    screenshots: ['feed-calc-screen1.jpg', 'feed-calc-screen2.jpg', 'feed-calc-screen3.jpg'],
-    status: 'completed',
-    downloadCount: '500+',
+    category: "mobile-app",
+    status: "shipped",
+    appIcon: "/projects/feed-calculator-icon.svg",
+    platform: "android",
+    downloadCount: "500+",
     rating: 4.8,
+    themeColor: "#6366f1",
   },
 ];
 
-// CONTACT DATA
 export const contactData: ContactData = {
-  cta: 'Would you like to work with me? Awesome!',
-  btn: "Let's Talk",
-  email: 'mohamed@example.com',
-  tel: '+254 714 347 036',
+  headline: "Have a product idea or platform to evolve?",
+  subheadline: "Let's map the roadmap, define success metrics, and ship with confidence.",
+  email: "demahom93@gmail.com",
+  tel: "+254 714 347 036",
+  location: "Nairobi, Kenya",
 };
 
-// SOCIAL NETWORKS
 export const socialNetworks: SocialNetwork[] = [
   {
-    id: nanoid(),
-    name: 'twitter',
-    url: 'https://twitter.com/aenshtyn',
-    icon: 'fa-twitter',
+    id: "github",
+    label: "GitHub",
+    url: "https://github.com/aenshtyn",
+    icon: "github",
   },
   {
-    id: nanoid(),
-    name: 'linkedin',
-    url: 'https://www.linkedin.com/in/aenshtyn/',
-    icon: 'fa-linkedin',
+    id: "linkedin",
+    label: "LinkedIn",
+    url: "https://www.linkedin.com/in/aenshtyn/",
+    icon: "linkedin",
   },
   {
-    id: nanoid(),
-    name: 'github',
-    url: 'http://github.com/aenshtyn',
-    icon: 'fa-github',
+    id: "twitter",
+    label: "Twitter",
+    url: "https://twitter.com/aenshtyn",
+    icon: "twitter",
   },
 ];
-
-// Github buttons
-export const githubButtons = {
-  isEnabled: false, // Disabled for cleaner look
-};
