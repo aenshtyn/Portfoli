@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { headData } from '@/lib/data';
+import { headData, heroData, contactData, socialNetworks, projectsData } from "@/lib/data";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -11,11 +11,47 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: headData.title,
   description: headData.description,
-  keywords: ["portfolio", "developer", "full-stack", "react", "next.js", "typescript"],
-  authors: [{ name: "Mohamed" }],
+  keywords: [
+    "portfolio",
+    "full-stack developer",
+    "software engineer",
+    "next.js",
+    "typescript",
+    "react",
+  ],
+  metadataBase: new URL("https://mohamed.co.ke"),
+  openGraph: {
+    title: headData.title,
+    description: headData.description,
+    type: "website",
+    locale: "en_US",
+    url: "https://mohamed.co.ke",
+    siteName: "Mohamed Abdullahi Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    creator: "@aenshtyn",
+    title: headData.title,
+    description: headData.description,
+  },
+  alternates: {
+    canonical: "https://mohamed.co.ke",
+  },
+  authors: [{ name: "Mohamed Abdullahi", url: "https://www.linkedin.com/in/aenshtyn/" }],
+  icons: {
+    icon: "/favicon.png",
+  },
+  category: "technology",
 };
 
-export const viewport = "width=device-width, initial-scale=1";
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#6366f1" },
+    { media: "(prefers-color-scheme: dark)", color: "#0f172a" },
+  ],
+};
 
 export default function RootLayout({
   children,
@@ -24,15 +60,42 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      <body className={`${inter.variable} font-sans antialiased bg-background text-foreground`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: heroData.name,
+              jobTitle: heroData.subtitle,
+              url: "https://mohamed.co.ke",
+              email: `mailto:${contactData.email}`,
+              telephone: contactData.tel,
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: contactData.location,
+              },
+              sameAs: socialNetworks.map((network) => network.url),
+              knowsAbout: [
+                "Full-stack engineering",
+                "Product architecture",
+                "Web performance",
+                "Mobile development",
+              ],
+              worksFor: {
+                "@type": "Organization",
+                name: "Independent Consultant",
+              },
+              hasPart: projectsData.slice(0, 5).map((project) => ({
+                "@type": "CreativeWork",
+                name: project.title,
+                url: project.liveUrl ?? project.githubUrl,
+                description: project.description,
+              })),
+            }),
+          }}
         />
-      </head>
-      <body
-        className={`${inter.variable} font-sans antialiased`}
-      >
         {children}
       </body>
     </html>
