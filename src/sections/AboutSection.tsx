@@ -82,7 +82,7 @@ export function AboutSection() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="space-y-10"
           >
-            <div className="relative mx-auto w-full max-w-sm">
+            {/* <div className="relative mx-auto w-full max-w-sm">
               <div className="absolute -inset-4 -z-10 rounded-[2.5rem] bg-gradient-to-r from-primary/40 via-secondary/40 to-accent/40 blur-2xl" />
               <div className="overflow-hidden rounded-[2.5rem] border border-white/10 bg-background/60 shadow-[0_25px_80px_rgba(15,23,42,0.35)] backdrop-blur">
                 <Image
@@ -94,9 +94,9 @@ export function AboutSection() {
                   className="h-full w-full object-cover"
                 />
               </div>
-            </div>
+            </div> */}
 
-            <div className="space-y-6 rounded-3xl border border-white/10 bg-background/70 p-8 backdrop-blur">
+            {/* <div className="space-y-6 rounded-3xl border border-white/10 bg-background/70 p-8 backdrop-blur">
               <h3 className="text-lg font-semibold text-foreground">Recent leadership highlights</h3>
               <ul className="space-y-6 text-sm text-muted/90">
                 {experiences.map((experience) => (
@@ -115,7 +115,7 @@ export function AboutSection() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
 
             <motion.div
               initial={{ opacity: 0, y: 16 }}

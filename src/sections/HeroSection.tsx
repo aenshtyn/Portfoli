@@ -51,7 +51,7 @@ export function HeroSection() {
               <ArrowDownRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-y-1" />
             </Link>
           </Button>
-          <Button variant="secondary" size="lg" asChild>
+          {/* <Button variant="secondary" size="lg" asChild>
             <Link
               href={aboutData.resumeUrl}
               className="group"
@@ -62,7 +62,7 @@ export function HeroSection() {
               <span>{heroData.ctaSecondary}</span>
               <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:-translate-y-1 group-hover:translate-x-1" />
             </Link>
-          </Button>
+          </Button> */}
         </motion.div>
 
         <motion.div

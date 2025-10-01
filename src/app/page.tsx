@@ -15,8 +15,8 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <WebsitesSection />
-        <WebAppsSection />
-        <MobileAppsSection />
+        {/* <WebAppsSection /> */}
+        {/* <MobileAppsSection /> */}
         <ContactSection />
       </main>
       <SiteFooter />

@@ -71,54 +71,54 @@ export interface SocialNetwork {
 }
 
 export const headData = {
-  title: "Mohamed Abdullahi | Full Stack Software Engineer",
+  title: "Mohamed Abdullahi | Full Stack Engineering Lead",
   lang: "en",
   description:
-    "Full Stack Engineer crafting resilient web and mobile platforms for agritech, fintech, and government partners.",
+    "Engineering lead translating complex workflows into resilient digital platforms for agritech, logistics, and public-sector teams in East Africa.",
 };
 
 export const navLinks = [
   { id: "hero", label: "Home" },
   { id: "about", label: "About" },
   { id: "websites", label: "Websites" },
-  { id: "webapps", label: "Web Apps" },
-  { id: "mobile", label: "Mobile" },
+  // { id: "webapps", label: "Web Apps" },
+  // { id: "mobile", label: "Mobile" },
   { id: "contact", label: "Contact" },
 ] as const;
 
 export const heroData: HeroData = {
-  title: "Full Stack Engineer",
+  title: "Full Stack Engineering Lead",
   name: "Mohamed Abdullahi",
-  subtitle: "Designing resilient platforms for emerging markets",
+  subtitle: "Turning complex operations into dependable software",
   description:
-    "I help product teams ship dependable web and mobile experiences – from real-time agritech platforms to enterprise dashboards and public-sector portals.",
+    "I partner with product, data, and operations leaders to translate field workflows into resilient web and mobile tools. Recent programs include agritech pricing platforms, procurement systems, and civic portals used daily across East Africa.",
   ctaPrimary: "Explore work",
   ctaSecondary: "Download résumé",
 };
 
 export const aboutData: AboutData = {
   bio: [
-    "I build platforms that connect people to critical services — from agricultural marketplaces to legal intelligence dashboards.",
-    "My focus is on performance, developer experience, and long-term maintainability. I lead teams through architecture decisions, guide refactors, and ship incrementally without sacrificing quality.",
+    "I design and scale platforms that keep cooperatives, procurement teams, and public services connected; from commodity price intelligence to legal research dashboards.",
+    "Across cross-functional squads I steward architecture decisions, guide refactors, and balance delivery velocity with maintainable codebases and reliable data loops.",
   ],
   stats: [
-    { label: "Years of experience", value: "6+" },
-    { label: "Projects delivered", value: "35" },
-    { label: "Markets served", value: "4" },
+    { label: "Years scaling platforms", value: "6+" },
+    { label: "Cross-functional launches", value: "35+" },
+    { label: "Countries supported", value: "4" },
   ],
   skills: [
     "TypeScript",
     "Next.js",
     "React Native",
     "Django",
+    "Node.js",
     "Vue",
-    "Angular",
     "PostgreSQL",
     "Tailwind CSS",
     "Azure",
+    "Kubernetes",
     "Docker",
     "CI/CD",
-    "System design",
   ],
   resumeUrl: "https://drive.google.com/file/d/1BCb9VUMWTrm-YtKMBxAg7jmoJkWgNhmf/view?usp=sharing",
   image: "/profile.jpg",
@@ -131,9 +131,9 @@ export const experiences: ExperienceItem[] = [
     role: "Lead Full Stack Engineer",
     period: "2022 — Present",
     accomplishments: [
-      "Architected a composable design system that cut build times by 40%",
-      "Delivered analytics dashboards processing 500K+ monthly events",
-      "Led migration to Kubernetes and Azure-managed services",
+      "Defined a modular design system spanning procurement, logistics, and engineering portals, cutting front-end build time by 40%",
+      "Delivered instrumentation-rich analytics processing 500K+ monthly events to unlock same-day operational decisions",
+      "Led the move to Azure Kubernetes Service with automated observability, cost controls, and blue/green delivery",
     ],
   },
   {
@@ -142,9 +142,9 @@ export const experiences: ExperienceItem[] = [
     role: "Senior Software Engineer",
     period: "2020 — 2022",
     accomplishments: [
-      "Shipped FarmSync platform with offline-first mobile companion",
-      "Built pricing intelligence tooling adopted by 12 co-ops",
-      "Introduced CI/CD workflows that reduced release friction by 60%",
+      "Delivered the FarmSync platform with offline-first mobile journeys connecting 12+ cooperatives to live price signals",
+      "Built commodity pricing intelligence tooling now referenced by national planning partners",
+      "Formalised CI/CD workflows and onboarding guides that cut release friction by 60%",
     ],
   },
 ];
@@ -153,19 +153,26 @@ export const services: ServiceItem[] = [
   {
     id: "product-engineering",
     title: "Product Engineering",
-    description: "End-to-end delivery of responsive web experiences with measurable KPIs.",
-    outcomes: ["Design system integration", "Web vitals optimisation", "Automated QA"],
+    description:
+      "Designing and delivering web platforms anchored in user journeys, measurable KPIs, and sustainable delivery cadence.",
+    outcomes: [
+      "Component libraries with visual regression coverage",
+      "Performance budgets with actionable dashboards",
+      "Release pipelines with automated QA gates",
+    ],
   },
   {
     id: "platform-architecture",
     title: "Platform Architecture",
-    description: "Evolving systems through modular architecture, observability, and DevOps best practices.",
-    outcomes: ["Cloud-native blueprints", "CI/CD pipelines", "Scalability roadmaps"],
+    description:
+      "Evolving platforms through modular architectures, observability, and pragmatic DevOps enablement for distributed teams.",
+    outcomes: ["Cloud-native blueprints", "Resilience playbooks", "Scalability roadmaps"],
   },
   {
     id: "mobile-delivery",
     title: "Mobile Delivery",
-    description: "Shipping cross-platform mobile apps with offline-first journeys and native polish.",
+    description:
+      "Shipping cross-platform mobile experiences that respect offline workflows, compliance requirements, and growth loops.",
     outcomes: ["Store deployment", "Analytics instrumentation", "Growth experiments"],
   },
 ];
@@ -176,9 +183,9 @@ export const projectsData: ProjectData[] = [
     slug: "latitude-enterprises",
     title: "Latitude Enterprises",
     description:
-      "Corporate presence for Latitude's procurement, logistics, and engineering practice with sector-specific case studies and tender funnels.",
+      "Corporate presence aligning Latitude's procurement, logistics, and engineering practices around sector case studies and RFP capture.",
     summary:
-      "Crafted a WordPress build with reusable content blocks, multilingual-ready architecture, and conversion-focused calls to action tuned for regional SEO.",
+      "Led a modular WordPress build with translation-ready blocks, CRM-integrated funnels, and Cloudflare caching tuned for East African audiences.",
     technologies: ["WordPress", "PHP", "MySQL", "Elementor", "Cloudflare"],
     liveUrl: "https://latitudeenterprises.com",
     year: 2024,
@@ -192,9 +199,9 @@ export const projectsData: ProjectData[] = [
     slug: "farmsync",
     title: "FarmSync",
     description:
-      "Marketing hub for FarmSync's digital marketplace featuring live price signals, produce category highlights, and cooperative success stories.",
+      "Growth and acquisition hub for FarmSync's agritech marketplace showcasing live price signals and cooperative success stories.",
     summary:
-      "Delivered a blazing-fast Next.js site with geotargeted messaging, newsroom publishing workflow, and CRM-integrated lead capture tied to agritech metrics.",
+      "Shipped a Next.js experience with geotargeted hero messaging, newsroom workflow, and CRM-connected lead capture powering agritech KPIs.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel"],
     liveUrl: "https://farmsync.co.ke",
     githubUrl: "https://github.com/aenshtyn/farmsync-website",
@@ -209,7 +216,7 @@ export const projectsData: ProjectData[] = [
     slug: "regal-studios",
     title: "Regal Studios",
     description:
-      "Immersive portfolio for Regal Studios' film and photography collective, blending editorial storytelling with high-impact visuals.",
+      "Immersive portfolio for Regal Studios' film and photography collective blending editorial storytelling with high-impact visuals.",
     summary:
       "Implemented a single-page React experience with parallax sequences, modular galleries, and enquiry CTAs aligned to the studio's brand voice.",
     technologies: ["React", "GSAP", "CSS Modules", "Vercel"],
@@ -226,9 +233,9 @@ export const projectsData: ProjectData[] = [
     slug: "feed-formulator",
     title: "Feed Formulator",
     description:
-      "Web application that helps livestock nutritionists balance formulas, compare ingredients, and export full ration reports in minutes.",
+      "Web application helping livestock nutritionists balance formulas, compare ingredients, and export full ration reports in minutes.",
     summary:
-      "Built a responsive React interface with real-time optimisation, charting dashboards, and Django-powered APIs for solver accuracy and data governance.",
+      "Built a responsive React interface with real-time optimisation, charting dashboards, and Django APIs for solver accuracy and data governance.",
     technologies: ["React", "TypeScript", "Django", "Chart.js", "Railway"],
     liveUrl: "https://feedformula.netlify.app/",
     githubUrl: "https://github.com/aenshtyn/feedformula",
@@ -244,7 +251,7 @@ export const projectsData: ProjectData[] = [
     description:
       "Operations cockpit for dairy farms covering herd health, production tracking, feed planning, and KPI dashboards.",
     summary:
-      "Delivered a Vue + Django stack with granular roles, offline-ready data capture, and analytics that surface actionable farm insights across cooperatives.",
+      "Delivered a Vue + Django stack with granular roles, offline-ready data capture, and analytics surfacing actionable farm insights across cooperatives.",
     technologies: ["Vue", "Django", "PostgreSQL", "Chart.js", "Bootstrap"],
     liveUrl: "https://dairymanagement.netlify.app/",
     githubUrl: "https://github.com/aenshtyn/dairy-management",
@@ -258,7 +265,7 @@ export const projectsData: ProjectData[] = [
     slug: "farmsync-mobile",
     title: "FarmSync Mobile",
     description:
-      "Cross-platform companion app that keeps farmers synced with price alerts, task lists, and buyer conversations on the go.",
+      "Cross-platform companion app keeping farmers synced with price alerts, task lists, and buyer conversations on the go.",
     summary:
       "Led delivery of a React Native application with offline storage, push notifications, and geo-tagged activity feeds wired into the FarmSync backend.",
     technologies: ["React Native", "Expo", "TypeScript", "Redux", "Firebase"],
@@ -280,7 +287,7 @@ export const projectsData: ProjectData[] = [
     slug: "feed-calculator-pro",
     title: "Feed Calculator Pro",
     description:
-      "Android toolkit that calculates balanced rations, generates PDF reports, and syncs ingredient libraries for nutrition consultants.",
+      "Android toolkit calculating balanced rations, generating PDF reports, and syncing ingredient libraries for nutrition consultants.",
     summary:
       "Built a Flutter experience featuring offline persistence, exportable nutrition reports, and analytics instrumentation for growth experiments.",
     technologies: ["Flutter", "Dart", "SQLite", "Firebase", "Analytics"],
@@ -299,8 +306,8 @@ export const projectsData: ProjectData[] = [
 ];
 
 export const contactData: ContactData = {
-  headline: "Have a product idea or platform to evolve?",
-  subheadline: "Let's map the roadmap, define success metrics, and ship with confidence.",
+  headline: "Ready to accelerate your platform roadmap?",
+  subheadline: "I help growth teams ship dependable software across East Africa. Let's align on goals and build a delivery plan.",
   email: "demahom93@gmail.com",
   tel: "+254 714 347 036",
   location: "Nairobi, Kenya",
