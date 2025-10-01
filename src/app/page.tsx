@@ -3,8 +3,6 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { HeroSection } from "@/sections/HeroSection";
 import { AboutSection } from "@/sections/AboutSection";
 import { WebsitesSection } from "@/sections/WebsitesSection";
-import { WebAppsSection } from "@/sections/WebAppsSection";
-import { MobileAppsSection } from "@/sections/MobileAppsSection";
 import { ContactSection } from "@/sections/ContactSection";
 
 export default function Home() {
@@ -15,8 +13,6 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <WebsitesSection />
-        {/* <WebAppsSection /> */}
-        {/* <MobileAppsSection /> */}
         <ContactSection />
       </main>
       <SiteFooter />

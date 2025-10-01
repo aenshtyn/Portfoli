@@ -28,25 +28,17 @@ const sizeStyles = {
 };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    {
-      className,
-      variant = "primary",
-      size = "md",
-      asChild = false,
-      children,
-      type,
-      ...rest
-    },
-    ref
-  ) => {
+  ({ className, variant = "primary", size = "md", asChild = false, children, type, ...rest }, ref) => {
     const composedClassName = cn(baseStyles, variantStyles[variant], sizeStyles[size], className);
 
     if (asChild && isValidElement(children)) {
-      return cloneElement(children as ReactElement, {
-        ...rest,
-        className: cn(composedClassName, (children.props as { className?: string }).className),
-      });
+      const child = children as ReactElement<{ className?: string }>;
+      const childProps = {
+        ...(rest as Record<string, unknown>),
+        className: cn(composedClassName, child.props.className),
+      } as Partial<typeof child.props>;
+
+      return cloneElement(child, childProps);
     }
 
     return (

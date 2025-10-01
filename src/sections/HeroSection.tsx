@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowDownRight, ArrowUpRight } from "lucide-react";
-import { heroData, aboutData } from "@/lib/data";
+import { ArrowDownRight } from "lucide-react";
+import { heroData } from "@/lib/data";
 import { Button } from "@/components/ui/Button";
 
 export function HeroSection() {

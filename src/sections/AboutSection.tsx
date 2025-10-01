@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { aboutData, experiences, services } from "@/lib/data";
+import { aboutData, services } from "@/lib/data";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const containerVariants = {
