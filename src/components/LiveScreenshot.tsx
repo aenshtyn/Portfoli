@@ -18,9 +18,9 @@ type LiveScreenshotProps = {
 };
 
 const buildScreenshotUrl = (url: string, variant: keyof typeof RATIO_CLASS) => {
-  const width = variant === "mobile" ? 600 : 1000;
-  const height = variant === "mobile" ? 1100 : 700;
-  return `https://api.thum.io/get/width/${width}/crop/${height}/noanimate/${encodeURIComponent(url)}`;
+  const width = variant === "mobile" ? 600 : 1920;
+  const height = variant === "mobile" ? 1100 : 1080;
+  return `https://api.screenshotmachine.com?key=54f94f&url=${encodeURIComponent(url)}&dimension=${width}x${height}&delay=5000`;
 };
 
 export function LiveScreenshot({ url, title, variant = "desktop", className, themeColor }: LiveScreenshotProps) {

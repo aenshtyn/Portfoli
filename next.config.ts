@@ -10,6 +10,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "api.thum.io",
       },
+      {
+        protocol: "https",
+        hostname: "api.screenshotmachine.com",
+      },
     ],
   },
 };
