@@ -19,7 +19,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ delay: index * 0.06, duration: 0.5, ease: "easeOut" }}
+      transition={{ delay: index * 0.06, duration: 0.5 }}
       className="group relative overflow-hidden rounded-3xl border border-white/10 bg-background/60 backdrop-blur transition hover:border-primary/40"
     >
       <div className="grid gap-8 p-8 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">

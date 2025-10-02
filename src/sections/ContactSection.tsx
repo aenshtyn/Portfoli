@@ -66,7 +66,7 @@ export function ContactSection() {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
+            transition={{ duration: 0.5 }}
             className="space-y-8"
           >
             <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.35em] text-muted">
@@ -119,7 +119,7 @@ export function ContactSection() {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ delay: 0.1, duration: 0.5, ease: "easeOut" }}
+            transition={{ delay: 0.1, duration: 0.5 }}
             className="rounded-3xl border border-white/10 bg-background/60 p-8 shadow-[0_20px_60px_rgba(15,23,42,0.35)] backdrop-blur"
           >
             <form className="space-y-6" onSubmit={handleSubmit}>

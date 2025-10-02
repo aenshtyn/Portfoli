@@ -42,7 +42,7 @@ export function MobileAppCard({ project, index }: MobileAppCardProps) {
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ delay: index * 0.08, duration: 0.45, ease: "easeOut" }}
+      transition={{ delay: index * 0.08, duration: 0.45 }}
       className="relative overflow-hidden rounded-3xl border border-white/10 bg-background/70 p-8 backdrop-blur"
     >
       <div className="flex flex-col gap-8 lg:flex-row">
