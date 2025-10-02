@@ -7,10 +7,11 @@
   },
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "eslint"
   },
+
   "dependencies": {
     "framer-motion": "^12.23.22",
     "lucide-react": "^0.544.0",
